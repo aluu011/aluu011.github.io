@@ -1,248 +1,354 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Web Page</title>
-  <style>
-    /* Basic page settings */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="P3 CSS OG.css">
+
+<title>NATHAN P3 HTML/CSS</title>
+
+<style>
     * {
-      box-sizing: border-box;
-    }
+	box-sizing: border-box;
+}
+/* Im using Grid for this project*/
+.grid{
+    display: grid;
+}
 
+
+/* nine colmns for phone */
+.grid.nine-column{
+    grid-template-columns: repeat(9, 1fr);
+}
+
+
+/* ten colmns for desktop */
+.ten-column{
+grid-template-columns: repeat(10, 1fr);
+}
+
+
+/* Styling for almost all content*/
+body{
+	font-family: Arial; /*need to change font*/
+	font-size: 2rem;
+	margin: 0;
+
+}
+
+/* for all h1*/
+h1{
+	font-size: 3rem;
+    color: black;
+	margin-top: 1rem;
+    margin-bottom: 0;
+    
+}
+
+/* p styling*/
+p{
+    margin-top: 0;
+    max-width: 60rem;
+}
+
+/*nav bar stuff*/
+nav {
+    background-color: #5545f5;
+    width: 25rem;
+}
+
+.nav-main-item {
+    grid-column: span 3;
+    text-align: center;
+    grid-row: 1;
+    margin-left: 2rem;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.nav-main-item:hover {
+    background-color: #4335c9;
+}
+
+
+/* for temporary image box in the landing page*/
+.large-image{
+    background-color: grey;
+    padding-bottom: 0;
+    padding-top: 0;
+    height: 33.75rem;
+}
+
+
+.large-image h1 {
+    color: #4335c9; /*need to change to correct color, this is just a random purple I chose*/
+    padding-top: 0;
+    margin: 0;
+    margin-left: 1rem;
+    font-size: 6rem;
+    grid-column: span 7;
+    align-self: end; /* found this using our resorces and googling */
+}
+
+.large-image nav{
+    grid-column: 10;
+    grid-row: 1;
+    max-height: 4rem;
+}
+
+
+/* for stuff that I want to be on the left*/
+.left{
+    text-align: left;
+    text-decoration: none;
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+.left p{
+    grid-column: span 4;
+    min-width: 40rem;
+    
+}
+
+
+/* for stuff I want to be on the right*/
+.right{
+    text-align: right;
+    margin-right: 1rem;
+}
+
+.right h1{
+    grid-column: 7 / 11;
+    grid-row: 1;
+    margin-top: -3rem;
+
+}
+
+.right p{
+    grid-column: 7 / 11;
+    min-width: 40rem;
+}
+
+
+/* temporary image 2 box for the second page*/
+.large-image-2{
+    background-color: grey;
+    grid-column: 1 / 4;
+    height: 50rem;
+    margin-top: 5rem
+}
+
+
+/* for the second page text*/
+.second-page-content{
+    grid-column: 5/ 11;
+    margin-left: 0;
+    margin-top: 5rem;
+}
+
+
+.third-page-content{
+    grid-column: 2 / 10;
+}
+
+.third-page-content h1{
+    color: #4335c9;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.makersinfo{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.makersinfo dd{
+    text-align: right;
+    margin: 0;
+}
+
+@media (max-width: 640px) {
     body {
-      margin: 0;
-      background-color: #d9dfe6;
-      color: #222;
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 15px;
-      line-height: 1.5;
+        font-size: 1rem;
     }
 
-    .page {
-      width: 95%;
-      max-width: 960px;
-      margin: 20px auto;
-      border: 1px solid #6b7885;
-      background-color: #fff;
-    }
-
-    a {
-      color: #003d80;
-    }
-
-    /* Header and navigation */
-    header {
-      padding: 24px;
-      background-color: #245783;
-      color: #fff;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 30px;
-    }
-
-    header p {
-      margin: 4px 0 0;
-      font-size: 14px;
+    .ten-column {
+        grid-template-columns: 1fr;
     }
 
     nav {
-      display: flex;
-      flex-wrap: wrap;
-      border-top: 1px solid #7596b3;
-      border-bottom: 2px solid #173e62;
-      background-color: #d5e3ef;
-    }
-
-    nav a {
-      display: block;
-      padding: 9px 18px;
-      border-right: 1px solid #9bb3c8;
-      font-weight: bold;
-      text-decoration: underline;
-    }
-
-    nav a:hover {
-      background-color: #b8d1e5;
-    }
-
-    /* Main content */
-    main {
-      padding: 24px;
-    }
-
-    .intro {
-      display: flex;
-      gap: 24px;
-      padding-bottom: 25px;
-      border-bottom: 1px solid #9aa5b0;
-    }
-
-    .intro-text {
-      width: 65%;
-    }
-
-    .intro-text h2 {
-      margin: 0 0 12px;
-      color: #173e62;
-      font-size: 24px;
-    }
-
-    .intro-text p {
-      margin: 0 0 12px;
-    }
-
-    .side-box {
-      width: 35%;
-      border: 1px solid #6b7885;
-      background-color: #f2f5f8;
-    }
-
-    .side-box h3 {
-      margin: 0;
-      padding: 7px 10px;
-      background-color: #245783;
-      color: #fff;
-      font-size: 16px;
-    }
-
-    .side-box p {
-      margin: 0;
-      padding: 12px;
-    }
-
-    .content-section {
-      padding-top: 25px;
-    }
-
-    .content-section h2 {
-      margin: 0 0 12px;
-      padding-bottom: 5px;
-      border-bottom: 2px solid #245783;
-      color: #173e62;
-      font-size: 20px;
-    }
-
-    .content-section p {
-      margin: 0 0 15px;
-    }
-
-    .box-row {
-      display: flex;
-      gap: 12px;
-      margin-top: 20px;
-    }
-
-    .box {
-      width: 33.33%;
-      border: 1px solid #8a969f;
-      background-color: #f7f7f7;
-    }
-
-    .box h3 {
-      margin: 0;
-      padding: 7px 10px;
-      border-bottom: 1px solid #8a969f;
-      background-color: #d5e3ef;
-      color: #173e62;
-      font-size: 16px;
-    }
-
-    .box p {
-      margin: 0;
-      padding: 12px;
-    }
-
-    /* Footer */
-    footer {
-      padding: 12px 24px;
-      border-top: 1px solid #8a969f;
-      background-color: #e7ebef;
-      color: #444;
-      font-size: 13px;
-      text-align: center;
-    }
-
-    /* Make the columns stack on small screens */
-    @media (max-width: 700px) {
-      .page {
-        margin: 0 auto;
-      }
-
-      .intro,
-      .box-row {
-        display: block;
-      }
-
-      .intro-text,
-      .side-box,
-      .box {
         width: 100%;
-      }
-
-      .side-box {
-        margin-top: 20px;
-      }
-
-      .box {
-        margin-bottom: 12px;
-      }
     }
-  </style>
+
+    .large-image {
+        height: auto;
+        min-height: 22rem;
+        padding: 0 1rem 1.5rem;
+    }
+
+    .large-image h1 {
+        grid-column: 1;
+        margin-left: 0;
+        font-size: 2.5rem;
+    }
+
+    .large-image nav,
+    .left p,
+    .right h1,
+    .right p,
+    .large-image-2,
+    .second-page-content,
+    .third-page-content {
+        grid-column: 1;
+    }
+
+    .left p,
+    .right p {
+        min-width: 0;
+    }
+
+    .left,
+    .right {
+        margin: 1rem;
+        text-align: left;
+    }
+
+    .right h1 {
+        margin-top: 0;
+    }
+
+    .large-image-2 {
+        height: 18rem;
+        margin-top: 1rem;
+    }
+
+    .second-page-content {
+        margin: 1rem;
+    }
+
+    .third-page-content {
+        margin: 0 1rem;
+    }
+}
+</style>
+
 </head>
+
 <body>
-  <div class="page">
-    <header id="home">
-      <h1>Some BS i made </h1>
-      <p>for nathan</p>
-    </header>
 
-    <nav aria-label="Main navigation">
-      <a href="#home">Home</a>
-      <a href="#vietnam1">vietnam1</a>
-      <a href="#vietnam2">vietnam2</a>
-      <a href="#vietnam3">vietnam3</a>
-    </nav>
 
-    <main>
-      <section class="intro">
-        <div class="intro-text">
-          <h2>Welcome to Cambodia</h2>
-          <p>Our first fact about Cambodia is that the country declared independence from France in 1953. Each year on November 9, locals flock to the Independence Monument in Phnom Penh to celebrate the anniversary of independence.</p>
+    <section id="Landing Page TOP">
+
+        <div class="grid ten-column large-image">
+            <nav>
+                <div class = "grid ten-column">
+                    <a href="#Home" class="nav-main-item">Home</a>
+                    <a href="#Devices" class="nav-main-item">Devices</a>
+                    <a href="#Contact" class="nav-main-item">Contact</a>
+                </div>
+            </nav>
+            
+            <h1>Smartphone Magnification Stand</h1>
+
+
         </div>
-        <aside class="side-box">
-          <h3>Cambodia Information</h3>
-          <p>Cambodia’s national dish is amok, a curry that is steam-cooked in banana leaves. Varieties of the dish include fish, chicken, tofu and more.</p>
-        </aside>
-      </section>
 
-      <section class="content-section" id="about">
-        <h2>About This Site</h2>
-        <p>vietnam better than cambodia</p>
-      </section>
-
-      <section class="content-section" id="">
-        <h2>Page Sections</h2>
-        <div class="box-row">
-          <div class="box">
-            <h3>Introduction</h3>
-            <p>The Cambodian flag is red and blue in colour and features a depiction of Angkor Wat. The flag is the only flag in the world that features a building!</p>
-          </div>
-          <div class="box">
-            <h3>Layout</h3>
-            <p>dub</p>
-          </div>
-          <div class="box">
-            <h3>More Information</h3>
-            <p>dub</p>
-          </div>
+        <div class="grid left ten-column">
+            <p>If you have difficulty reading small text, 
+                the Smartphone Magnification Stand will hold your smartphone steady 
+                above the page you need to see so you can use your smartphone as a 
+                magnifier to see details more clearly.
+            </p>
         </div>
-      </section>
-    </main>
 
-    <footer id="footer">Dew &copy; 2026</footer>
-  </div>
+    </section>    
+
+
+    <section id="Landing Page BOTTOM">
+
+        <div class="grid right ten-column">
+            <h1>Cost $0</h1>
+
+        <p>
+            This inexpensive 3D printed smartphone stand will allow for a smartphone
+            to be held up while it is being used as a magnifier.
+            The phone stand is designed to hold the user’s smartphone up 
+            high enough from the page that the camera on the back of the user’s 
+            phone can fully focus.
+        </p>
+        
+        </div>
+    </section>
+
+    <section id="Second-page">
+        <div class="grid ten-column">
+
+        <div class="large-image-2"></div>
+
+        <div class="second-page-content">
+
+        <header>
+            <h1>Disability Type</h1>
+
+        </header>
+
+        <p>
+            This phone stand may be beneficial to someone with visual impairment
+            that requires text to be enlarged or better contrasted to
+            its surroundings in order to read it. This device may also be beneficial
+            to someone with limited finger dexterity as it will assist them in taking
+            steady pictures.
+        </p>
+
+        <header>
+            <h1>How To Use</h1>
+        </header>
+
+        <p>
+            This phone stand is intended to be paired with a 
+            magnification app that one can find in the app store on their phone.
+            The phone stand holds a phone parallel to the surface it is placed on
+            and is easy to slide around.
+        
+            The user will place the phone in the phone stand, and place the 
+            phone stand on top of the sheet of paper they are trying to read from. 
+            A magnification app will allow the user to choose magnification,
+            contrast, and lighting options that will help them see the page.
+            The user will then hold down the page with one hand and move the
+            phone stand and phone with the other as needed to read across the page.
+        </p>
+
+        </div>
+        </div>
+    </section>
+
+    <section id="Makers Information">
+        <div class="grid ten-column">
+            <div class="third-page-content">
+                <h1> Makers Information</h1>
+                
+                <dl class="makersinfo">
+
+                    <dt>Equipment Required</dt>
+                    <dd>3D Printer</dd>
+
+                    <dt>Skills Required</dt>
+                    <dd>Basic 3D printing skills</dd>
+
+                    <dt>Print Time</dt>
+                    <dd>2 Hours</dd>
+
+                    <dt>Assemble Time</dt>
+                    <dd>0 Hours</dd>
+
+                </dl>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>
