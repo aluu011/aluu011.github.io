@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Web Page</title>
+  <style>
+    /* Basic page settings */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background-color: #d9dfe6;
+      color: #222;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .page {
+      width: 95%;
+      max-width: 960px;
+      margin: 20px auto;
+      border: 1px solid #6b7885;
+      background-color: #fff;
+    }
+
+    a {
+      color: #003d80;
+    }
+
+    /* Header and navigation */
+    header {
+      padding: 24px;
+      background-color: #245783;
+      color: #fff;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 4px 0 0;
+      font-size: 14px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      border-top: 1px solid #7596b3;
+      border-bottom: 2px solid #173e62;
+      background-color: #d5e3ef;
+    }
+
+    nav a {
+      display: block;
+      padding: 9px 18px;
+      border-right: 1px solid #9bb3c8;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    nav a:hover {
+      background-color: #b8d1e5;
+    }
+
+    /* Main content */
+    main {
+      padding: 24px;
+    }
+
+    .intro {
+      display: flex;
+      gap: 24px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #9aa5b0;
+    }
+
+    .intro-text {
+      width: 65%;
+    }
+
+    .intro-text h2 {
+      margin: 0 0 12px;
+      color: #173e62;
+      font-size: 24px;
+    }
+
+    .intro-text p {
+      margin: 0 0 12px;
+    }
+
+    .side-box {
+      width: 35%;
+      border: 1px solid #6b7885;
+      background-color: #f2f5f8;
+    }
+
+    .side-box h3 {
+      margin: 0;
+      padding: 7px 10px;
+      background-color: #245783;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .side-box p {
+      margin: 0;
+      padding: 12px;
+    }
+
+    .content-section {
+      padding-top: 25px;
+    }
+
+    .content-section h2 {
+      margin: 0 0 12px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #245783;
+      color: #173e62;
+      font-size: 20px;
+    }
+
+    .content-section p {
+      margin: 0 0 15px;
+    }
+
+    .box-row {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .box {
+      width: 33.33%;
+      border: 1px solid #8a969f;
+      background-color: #f7f7f7;
+    }
+
+    .box h3 {
+      margin: 0;
+      padding: 7px 10px;
+      border-bottom: 1px solid #8a969f;
+      background-color: #d5e3ef;
+      color: #173e62;
+      font-size: 16px;
+    }
+
+    .box p {
+      margin: 0;
+      padding: 12px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 12px 24px;
+      border-top: 1px solid #8a969f;
+      background-color: #e7ebef;
+      color: #444;
+      font-size: 13px;
+      text-align: center;
+    }
+
+    /* Make the columns stack on small screens */
+    @media (max-width: 700px) {
+      .page {
+        margin: 0 auto;
+      }
+
+      .intro,
+      .box-row {
+        display: block;
+      }
+
+      .intro-text,
+      .side-box,
+      .box {
+        width: 100%;
+      }
+
+      .side-box {
+        margin-top: 20px;
+      }
+
+      .box {
+        margin-bottom: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header id="home">
+      <h1>Some BS i made </h1>
+      <p>for nathan</p>
+    </header>
+
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#vietnam1">vietnam1</a>
+      <a href="#vietnam2">vietnam2</a>
+      <a href="#vietnam3">vietnam3</a>
+    </nav>
+
+    <main>
+      <section class="intro">
+        <div class="intro-text">
+          <h2>Welcome to Cambodia</h2>
+          <p>Our first fact about Cambodia is that the country declared independence from France in 1953. Each year on November 9, locals flock to the Independence Monument in Phnom Penh to celebrate the anniversary of independence.</p>
+        </div>
+        <aside class="side-box">
+          <h3>Cambodia Information</h3>
+          <p>Cambodia’s national dish is amok, a curry that is steam-cooked in banana leaves. Varieties of the dish include fish, chicken, tofu and more.</p>
+        </aside>
+      </section>
+
+      <section class="content-section" id="about">
+        <h2>About This Site</h2>
+        <p>vietnam better than cambodia</p>
+      </section>
+
+      <section class="content-section" id="">
+        <h2>Page Sections</h2>
+        <div class="box-row">
+          <div class="box">
+            <h3>Introduction</h3>
+            <p>The Cambodian flag is red and blue in colour and features a depiction of Angkor Wat. The flag is the only flag in the world that features a building!</p>
+          </div>
+          <div class="box">
+            <h3>Layout</h3>
+            <p>dub</p>
+          </div>
+          <div class="box">
+            <h3>More Information</h3>
+            <p>dub</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer id="footer">Dew &copy; 2026</footer>
+  </div>
+</body>
+</html>
